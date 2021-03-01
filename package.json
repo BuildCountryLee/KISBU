@@ -1,0 +1,29 @@
+{
+  "name": "kisbu",
+  "version": "1.0.0",
+  "description": "业务组件库",
+  "main": "index.js",
+  "private": true,
+  "bin": {
+    "kis-bu": "./bin/index.js"
+  },
+  "scripts": {
+    "dev": "node ./bin/index.js dev",
+    "create": "node ./bin/index.js create"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.kingdee.com:kis-fe/kisbu.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vue/component-compiler-utils": "^3.2.0",
+    "commander": "^7.1.0",
+    "consola": "^2.15.3",
+    "fs-extra": "^9.1.0",
+    "hash-sum": "^2.0.0",
+    "vue-template-compiler": "^2.6.12"
+  }
+}
