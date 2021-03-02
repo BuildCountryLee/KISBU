@@ -4,6 +4,8 @@ const hash = require('hash-sum');
 const { remove, readFileSync, writeFileSync } = require('fs-extra');
 const { parse } = require('path');
 const { replaceExt } = require('../common');
+const { compileJs } = require('./compile-js');
+const { compileStyle } = require('./compile-style');
 
 const RENDER_FN = '__vue_render__';
 const STATIC_RENDER_FN = '__vue_staticRenderFns__';
@@ -39,6 +41,7 @@ function injectStyle(script, styles, filePath) {
   if (styles.length) {
     const imports = styles.map((style, index) => {
       const { base } = parse(getSfcStylePath(filePath, 'css', index));
+      // const { base } = parse(getSfcStylePath(filePath, style.lang, index));
       return `import './${base}';`;
     }).join('\n');
 
@@ -54,7 +57,7 @@ function compileTemplate(template) {
     isProduction: true,
   });
 
-  console.log(result);
+  // console.log(result);
   return result.code;
 }
 
@@ -67,7 +70,7 @@ function parseSfc(filePath) {
     needMap: false,
   });
 
-  console.log(descriptor);
+  // console.log(descriptor);
   return descriptor;
 }
 
@@ -100,12 +103,35 @@ module.exports = {
           }
 
           writeFileSync(jsFilePath, script);
-          // compileJs(jsFilePath).then(resolve).catch(reject);
+          compileJs(jsFilePath).then(resolve).catch(reject);
         })
-      )
+      );
     }
 
     // compile style
+    tasks.push(
+      ...styles.map((style, index) => {
+        const cssFilePath = getSfcStylePath(filePath, style.lang || 'css', index);
+
+        let styleSource = trim(style.content);
+
+        if (style.scoped) {
+          styleSource = compilerUtils.compileStyle({
+            id: scopeId,
+            scoped: true,
+            source: styleSource,
+            filename: cssFilePath,
+            preprocessLang: style.lang,
+          }).code;
+
+          // console.log(styleSource);
+        }
+
+        writeFileSync(cssFilePath, styleSource);
+
+        return compileStyle(cssFilePath);
+      })
+    )
 
 
     return Promise.all(tasks);

@@ -1,7 +1,6 @@
 const { remove } = require('fs-extra');
 const { resolve } = require('path');
-
-const ES_DIR = resolve(__dirname, '../../es');
+const { ES_DIR } = require('../common/constant');
 
 module.exports = {
   async clean() {

@@ -1,3 +1,5 @@
+[toc]
+
 # KISBU
 
 业务组件库
@@ -28,7 +30,7 @@ npm link
 kis-bu create new-business-component-name
 
 # 开发项目预览
-kis-bu dev
+kis-bu serve
 
 # 打包项目
 kis-bu build
@@ -39,3 +41,17 @@ kis-bu build
 # 查看kis-bu命令行帮助
 kis-bu -h, kis-bu --help
 ```
+
+## 命令行
+
+### serve
+
+运行本地开发环境。
+
+运行 serve 命令时，kis-bu 会通过 [webpack-dev-server](https://github.com/webpack/webpack-dev-server) 启动一个本地服务器，用于在开发过程中对文档和示例进行预览。
+
+## 配置指南
+
+### kisbu.config.js
+
+kisbu.config.js中包含了 *打包配置* 和 *文档站点配置* ，请创建此文件并置于项目根目录下（kisbu-cli将以此文件所在目录作为根目录）。示例如下：

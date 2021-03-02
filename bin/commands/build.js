@@ -17,7 +17,6 @@ module.exports = async function build() {
     consola.error(err);
     consola.error('build fail');
   }
-
 }
 
 async function buildEs() {

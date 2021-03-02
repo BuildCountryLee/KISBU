@@ -1,16 +1,14 @@
 #! /usr/bin/env node
 const { Command } = require('commander');
+const serve = require('./commands/serve');
 const build = require('./commands/build');
 
 const program = new Command();
 
-// TODO
 program
-  .command('dev')
-  .description('run kis-bu project')
-  .action(function () {
-    console.log(123);
-  });
+  .command('serve')
+  .description('run kis-bu project by webpack-server')
+  .action(serve);
 
 // TODO
 program
