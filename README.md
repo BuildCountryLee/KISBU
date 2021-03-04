@@ -1,12 +1,12 @@
 [toc]
 
-# KISBU
+KISBU
 
 业务组件库
 
-## 安装
+# 安装
 
-### 如何使用KISBU开发新的kis业务项目？
+## 如何使用KISBU开发新的kis业务项目？
 
 ```bash
 npm init -y
@@ -17,11 +17,11 @@ npm install @kis/cli --save-dev
 
 ```
 
-## 使用
+# 使用
 
-## 开发
+# 开发
 
-### 如何在KISBU中开发新的业务组件？
+## 如何在KISBU中开发新的业务组件？
 
 ```bash
 npm link
@@ -42,16 +42,38 @@ kis-bu build
 kis-bu -h, kis-bu --help
 ```
 
-## 命令行
+# 命令行
 
-### serve
+## serve
 
 运行本地开发环境。
 
 运行 serve 命令时，kis-bu 会通过 [webpack-dev-server](https://github.com/webpack/webpack-dev-server) 启动一个本地服务器，用于在开发过程中对文档和示例进行预览。
 
-## 配置指南
+# 配置指南
 
-### kisbu.config.js
+## kisbu.config.js
 
-kisbu.config.js中包含了 *打包配置* 和 *文档站点配置* ，请创建此文件并置于项目根目录下（kisbu-cli将以此文件所在目录作为根目录）。示例如下：
+kisbu.config.js中包含了 **打包配置** 和 **文档站点配置** ，请创建此文件并置于项目根目录下（kisbu-cli将以此文件所在目录作为根目录）。示例如下：
+
+## Webpack
+
+通过根目录下的`webpack.config.js`文件可以修改webpack配置，配置内容会通过webpack-merge合并到最终配置中。
+
+## Babel
+
+通过根目录下的`babel.config.js`文件可以对Bable进行配置。
+
+## Postcss
+
+通过根目录下的`postcss.config.js`文件可以对Postcss进行配置
+
+### kisbu默认配置
+
+```js
+module.exports = {
+  plugins: {
+    autoprefixer: {},
+  }
+}
+```

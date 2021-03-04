@@ -2,6 +2,7 @@
 const { Command } = require('commander');
 const serve = require('./commands/serve');
 const build = require('./commands/build');
+const buildSite = require('./commands/build-site');
 
 const program = new Command();
 
@@ -22,5 +23,10 @@ program
   .command('build')
   .description('build kis-bu')
   .action(build);
+
+program
+  .command('build-site')
+  .description('build site in production mode')
+  .action(buildSite);
 
 program.parse();
