@@ -6,7 +6,10 @@ const { getSiteDevConfig } = require('../config/webpack.site.dev');
 const { getSiteProdConfig } = require('../config/webpack.site.prod');
 
 function runDevServer(port, config) {
-  // console.log(config);
+  console.log(config.module.rules);
+  if (config.devServer.port !== port) {
+    config.devServer.port = port;
+  }
   const server = new webpackDevServer(webpack(config), config.devServer);
 
   // const host = config.devServer.host.localhost;
@@ -16,6 +19,7 @@ function runDevServer(port, config) {
   //     console.log(err);
   //   }
   // })
+
   server.listen(port);
 }
 
@@ -24,7 +28,6 @@ function watch() {
   portfinder.getPort({
     port: config.devServer.port,
   }, (err, port) => {
-    console.log('ppport', port);
     if (err) {
       console.log(err);
       return;

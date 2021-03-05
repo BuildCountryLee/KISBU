@@ -16,7 +16,7 @@ const CSS_LOADERS = [
     loader: 'postcss-loader',
     options: {
       config: {
-        path: POSTCSS_CONFIG_FILE
+        path: POSTCSS_CONFIG_FILE,
       },
     },
   },
@@ -31,12 +31,7 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        use: [
-          {
-            loader: 'vue-loader',
-            options: {}
-          }
-        ]
+        use: ['vue-loader'],
       },
       {
         test: /\.(js|ts|jsx|tsx)$/,

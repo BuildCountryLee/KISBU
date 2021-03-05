@@ -10,7 +10,7 @@ function getSiteDevBaseConfig() {
   return merge(baseConfig, {
     entry: {
       'site-mobile': [
-        join(__dirname, '../../site/mobile/main.js'),
+        join(ROOT, 'site/mobile/main.js'),
       ],
       'site-web': [
         join(ROOT, 'site/web/main.js'),
