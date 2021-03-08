@@ -8,8 +8,10 @@
     "kis-bu": "./bin/index.js"
   },
   "scripts": {
-    "dev": "node ./bin/index.js dev",
-    "create": "node ./bin/index.js create"
+    "start": "npm run serve",
+    "serve": "kis-bu serve",
+    "build": "kis-bu build",
+    "create": "kis-bu create"
   },
   "repository": {
     "type": "git",

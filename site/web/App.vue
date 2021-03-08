@@ -14,8 +14,7 @@ export default {
 }
 </script>
 
-<style>
-.app{
-  background-color: #000;
-}
+<style lang="less">
+@import '../common/style/base.less';
+
 </style>
