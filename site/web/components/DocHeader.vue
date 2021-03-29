@@ -1,7 +1,7 @@
 <template>
   <div class="doc-header">
     <div class="logo">
-      <img :src="" alt="">
+      <img src="" alt="">
     </div>
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
 
 <style scoped lang="less">
 .doc-header{
-  background-color: #fff;
+  background-color: #001938;
   height: 60px;
   border-bottom: 1px solid #E6E6E6;
 }

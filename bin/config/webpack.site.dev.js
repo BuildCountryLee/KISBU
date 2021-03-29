@@ -1,7 +1,7 @@
 const { merge } = require('webpack-merge');
 const { join } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { ROOT } = require('../common/constant');
+const { ROOT, SITE_DESKTOP_SHARED_FILE, SITE_MOBILE_SHARED_FILE } = require('../common/constant');
 const baseConfig = require('./webpack.base');
 const { getWebpackConfig } = require('../common');
 
@@ -23,7 +23,10 @@ function getSiteDevBaseConfig() {
       publicPath: '/',
     },
     resolve: {
-      alias: {}
+      alias: {
+        'site-desktop-shared': SITE_DESKTOP_SHARED_FILE,
+        'site-mobile-shared': SITE_MOBILE_SHARED_FILE
+      }
     },
     output: {
       chunkFilename: '[name].js',

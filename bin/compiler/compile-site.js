@@ -12,14 +12,6 @@ function runDevServer(port, config) {
   }
   const server = new webpackDevServer(webpack(config), config.devServer);
 
-  // const host = config.devServer.host.localhost;
-
-  // server.listen(port, host, (err) => {
-  //   if (err) {
-  //     console.log(err);
-  //   }
-  // })
-
   server.listen(port);
 }
 
