@@ -17,7 +17,7 @@ function resolveDocuments(components) {
 }
 
 function genImportDocuments(items) {
-  return items.map(item => `import ${item.name} from ${normalizePath(item.path)}`).join('\n');
+  return items.map(item => `import ${item.name} from '${normalizePath(item.path)}'`).join('\n');
 }
 
 function genSiteWebShared() {
