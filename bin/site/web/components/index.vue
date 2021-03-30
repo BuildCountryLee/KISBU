@@ -1,14 +1,13 @@
 <template>
-  <div>
+  <div class="kis-doc">
     <doc-header></doc-header>
     <doc-nav></doc-nav>
-    test1
   </div>
 </template>
 
 <script>
-import DocHeader from './DocHeader';
-import DocNav from './DocNav';
+import DocHeader from './doc-header';
+import DocNav from './doc-nav';
 
 export default {
   components: {
@@ -18,6 +17,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped lang="less">
+.kis-doc{
+  
+}
 </style>
