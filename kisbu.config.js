@@ -3,6 +3,17 @@ module.exports = {
   // 文档站点配置
   site: {
     title: 'KIS BU',
-    logo: 'https://kisyun.kingdee.com/view/style/img/qjb.png',
-  }
+    logo: 'https://kismob.kingdee.com/kisplus/assets/kis-logo.png',
+  },
+  nav: [
+    {
+      title: '基础组件',
+      items: [
+        {
+          title: '按钮',
+          path: 'button',
+        }
+      ]
+    }
+  ]
 }

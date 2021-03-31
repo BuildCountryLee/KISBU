@@ -4,7 +4,7 @@ const {
   ROOT_POSTCSS_CONFIG_FILE,
 } = require('../common/constant');
 
-const CAM_REGEXP = /-(w)/g;
+const CAM_REGEXP = /-(\w)/g;
 const PAS_REGEXP = /(\w)(\w*)/g;
 
 function camelize(str) {

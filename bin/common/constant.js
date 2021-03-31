@@ -2,12 +2,13 @@ const { existsSync } = require('fs');
 const { join, dirname } = require('path');
 
 function findRootDir(dir) {
-  console.log(dir);
+  // console.log(dir);
   if (dir === '/') {
     return '/';
   }
 
   if (existsSync(join(dir, 'kisbu.config.js'))) {
+    // console.log(dir);
     return dir;
   }
 
@@ -44,15 +45,16 @@ function getKisbuConfig() {
 }
 
 module.exports = {
-  ROOT,
-  SRC_DIR,
   ES_DIR,
-  SITE_DIST_DIR,
-  ROOT_WEBPACK_CONFIG_FILE,
-  POSTCSS_CONFIG_FILE,
+  KISBU_CONFIG_FILE,
+  ROOT,
   ROOT_POSTCSS_CONFIG_FILE,
+  ROOT_WEBPACK_CONFIG_FILE,
+  SITE_DIST_DIR,
   SITE_DESKTOP_SHARED_FILE,
   SITE_MOBILE_SHARED_FILE,
+  SRC_DIR,
+  POSTCSS_CONFIG_FILE,
   getPackageJson,
   getKisbuConfig,
 }

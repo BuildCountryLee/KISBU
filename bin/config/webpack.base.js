@@ -46,6 +46,10 @@ module.exports = {
         test: /\.less$/,
         use: [...CSS_LOADERS, 'less-loader'],
       },
+      {
+        test: /\.md$/,
+        use: ['vue-loader', '@vant/markdown-loader'],
+      }
     ]
   },
   plugins: [

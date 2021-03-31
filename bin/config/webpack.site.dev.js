@@ -2,6 +2,7 @@ const { merge } = require('webpack-merge');
 const { join } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { SITE_DESKTOP_SHARED_FILE, SITE_MOBILE_SHARED_FILE } = require('../common/constant');
+const KisSitePlugin = require('../compiler/kis-site-plugin');
 const baseConfig = require('./webpack.base');
 const { getWebpackConfig } = require('../common');
 
@@ -33,6 +34,7 @@ function getSiteDevBaseConfig() {
       chunkFilename: '[name].js',
     },
     plugins: [
+      new KisSitePlugin(),
       new HtmlWebpackPlugin({
         chunks: ['chunks', 'site-mobile'],
         template: join(__dirname, '../site/mobile/index.html'),
@@ -42,7 +44,7 @@ function getSiteDevBaseConfig() {
         chunks: ['chunks', 'site-web'],
         template: join(__dirname, '../site/web/index.html'),
         filename: 'index.html',
-      })
+      }),
     ]
   })
 }
