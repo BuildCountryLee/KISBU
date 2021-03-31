@@ -26,5 +26,6 @@ export default {
 
 <style lang="less">
 @import '../common/style/base.less';
+@import '../common/style/highlight';
 
 </style>
