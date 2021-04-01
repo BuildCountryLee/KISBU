@@ -3,7 +3,14 @@
     <div v-for="(group, index) in nav" :key="index">
       <div class="doc-nav__title">{{group.title}}</div>
       <div v-for="(item, groupIndex) in group.items" :key="groupIndex">
-        <div class="doc-nav__item">{{item.title}}</div>
+        <div class="doc-nav__item">
+          <router-link
+            :to="item.path"
+            :class="{active: $route.path === `/${item.path}`}"
+          >
+            {{item.title}}
+          </router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -13,13 +20,14 @@
 export default {
   props: {
     nav: Array,
-  }
+  },
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 .doc-nav{
   position: fixed;
+  // padding-left: 20px;
   top: 60px;
   bottom: 0;
   left: 0;
@@ -32,18 +40,19 @@ export default {
   }
 
   &__title {
-    padding: 8px 0 8px;
+    padding: 8px 0 8px 20px;
     color: #455a64;
-    font-weight: 500;
+    font-weight: 800;
     font-size: 15px;
     line-height: 28px;
   }
 
   &__item {
+
     a {
       display: block;
       margin: 0;
-      padding: 8px 0 8px 5px;
+      padding: 8px 0 8px 30px;
       color: #455a64;
       font-size: 14px;
       line-height: 28px;
@@ -51,7 +60,8 @@ export default {
 
       &:hover,
       &.active {
-        color: #4fc08d;
+        background-color: #fafafa;
+        color: #2386EE;
       }
 
       &.active {

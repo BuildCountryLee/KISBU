@@ -15,7 +15,6 @@ export default {
 
 .doc-content{
   padding: 0 0 75px;
-
   .card {
     margin-bottom: 24px;
     padding: 24px;

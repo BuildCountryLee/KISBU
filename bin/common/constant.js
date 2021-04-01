@@ -8,7 +8,6 @@ function findRootDir(dir) {
   }
 
   if (existsSync(join(dir, 'kisbu.config.js'))) {
-    // console.log(dir);
     return dir;
   }
 

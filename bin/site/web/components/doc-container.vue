@@ -17,11 +17,10 @@ export default {
 <style scoped lang="less">
 .doc-container{
   margin: 0 auto;
+  padding-top: 60px;
   padding-left: 200px;
   width: 100%;
   box-sizing: border-box;
-  // background-color: lightcoral;
-
   @media (min-width: 1680px) {
     width: 1680px;
   }

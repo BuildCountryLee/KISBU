@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import { documents } from 'site-desktop-shared';
+import Home from './components/doc-home';
 
 Vue.use(VueRouter);
 
@@ -13,6 +14,16 @@ function getRoutes(documents) {
       path: `/${name.toLowerCase()}`,
       component: documents[name]
     }
+  });
+
+  routes.unshift({
+    path: '/home',
+    component: Home
+  });
+
+  routes.unshift({
+    path: '/',
+    redirect: 'home'
   });
 
   return routes;
