@@ -32,6 +32,7 @@ export default {
   bottom: 0;
   left: 0;
   width: 200px;
+  overflow-y: scroll;
   background-color: #FFF;
 
   @media (min-width: 1680px) {
