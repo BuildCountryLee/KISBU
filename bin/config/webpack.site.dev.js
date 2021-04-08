@@ -18,10 +18,10 @@ function getSiteDevBaseConfig() {
       ]
     },
     devServer: {
-      port: 8080,
+      port: 1111,
       quiet: false,
       hot: true,
-      host: '0.0.0.0',
+      host: '172.20.58.131',
       publicPath: '/',
     },
     resolve: {
