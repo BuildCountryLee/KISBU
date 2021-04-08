@@ -21,6 +21,10 @@ module.exports = {
         {
           title: '按钮',
           path: 'button',
+        },
+        {
+          title: '列表',
+          path: 'kis-list'
         }
       ]
     },
@@ -34,7 +38,8 @@ module.exports = {
         {
           title: '供应商列表',
           path: 'supplier',
-        }
+        },
+        
       ]
     }
   ]

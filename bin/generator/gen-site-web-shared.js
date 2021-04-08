@@ -4,7 +4,6 @@ const {
   KISBU_CONFIG_FILE,
   SITE_DESKTOP_SHARED_FILE,
   SRC_DIR,
-  ROOT,
 } = require('../common/constant');
 const { smartOutput, pascalize, normalizePath } = require('../common');
 

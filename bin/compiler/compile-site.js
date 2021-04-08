@@ -6,7 +6,7 @@ const { getSiteDevConfig } = require('../config/webpack.site.dev');
 const { getSiteProdConfig } = require('../config/webpack.site.prod');
 
 function runDevServer(port, config) {
-  console.log(config.module.rules);
+  // console.log(config.module.rules);
   if (config.devServer.port !== port) {
     config.devServer.port = port;
   }
