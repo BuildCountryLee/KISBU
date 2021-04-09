@@ -13,7 +13,6 @@ function getRoutes(documents) {
   const routes = names.map(name => {
     return {
       name,
-      // path: `/${name.toLowerCase()}`,
       path: `/${decamelize(name)}`,
       component: documents[name]
     }
